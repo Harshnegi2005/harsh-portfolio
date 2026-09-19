@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Harsh Negi — Digital Marketing Professional specializing in SEO, Content Marketing, Paid Ads & Growth Strategy.">
+<title>Harsh Negi | Digital Marketing Portfolio</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --orange: #f97316;
+  --orange-dark: #ea580c;
+  --navy: #0b192c;
+  --navy-light: #1e293b;
+  --soft: #fff7ed;
+  --shadow: 0 18px 50px rgba(15,23,42,.08);
+  --shadow-lg: 0 25px 50px -12px rgba(15,23,42,.25);
+  --radius: 22px;
+  --max: 1180px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+html { scroll-padding-top: 90px; }
+body {
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(249,115,22,.08), transparent 25%),
+    radial-gradient(circle at 90% 30%, rgba(11,25,44,.05), transparent 28%),
+    var(--bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+.container { width: min(var(--max), 92%); margin: auto; }
+
+/* Navigation */
+header {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+.navbar {
+  min-height: 76px; display: flex; align-items: center; justify-content: space-between;
+}
+.logo { font-family: "Playfair Display", serif; font-size: 1.6rem; font-weight: 700; color: var(--navy); }
+.logo span { color: var(--orange); }
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links a { font-size: 0.95rem; font-weight: 600; color: #475569; position: relative; transition: color 0.2s; }
+.nav-links a::after {
+  content: ""; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px;
+  background: var(--orange); transition: 0.3s;
+}
+.nav-links a:hover { color: var(--orange); }
+.nav-links a:hover::after { width: 100%; }
+.menu-btn {
+  display: none; border: 0; background: var(--navy); color: white;
+  width: 42px; height: 42px; border-radius: 12px; font-size: 20px; cursor: pointer;
+}
+
+/* Hero Section */
+.hero { min-height: 100vh; padding: 145px 0 80px; display: flex; align-items: center; }
+.hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 60px; align-items: center; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border: 1px solid #fed7aa; background: var(--soft);
+  color: var(--orange-dark); border-radius: 999px; font-size: 0.82rem; font-weight: 700;
+  margin-bottom: 20px;
+}
+.eyebrow i { width: 8px; height: 8px; background: var(--orange); border-radius: 50%; display: block; }
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.1rem, 6.5vw, 5.6rem);
+  line-height: 1.02; letter-spacing: -.03em; margin-bottom: 18px; color: var(--navy);
+}
+h1 em { color: var(--orange); font-style: normal; }
+.hero-role { font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 700; margin-bottom: 18px; color: #334155; }
+.hero-role span { color: var(--orange); margin: 0 4px; }
+.hero-copy { max-width: 620px; color: var(--muted); font-size: 1.05rem; margin-bottom: 30px; }
+.buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  padding: 13px 24px; border-radius: 12px; font-weight: 700; transition: 0.25s;
+  border: 1px solid transparent; cursor: pointer; font-size: 0.95rem;
+}
+.btn-primary { background: var(--navy); color: white; box-shadow: 0 10px 25px rgba(11,25,44,.15); }
+.btn-primary:hover { background: var(--orange); transform: translateY(-3px); }
+.btn-light { background: white; border-color: var(--line); color: var(--text); }
+.btn-light:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-3px); }
+
+/* Profile Card Visual */
+.hero-visual { position: relative; display: flex; justify-content: center; }
+.profile-card {
+  width: min(380px, 82vw); aspect-ratio: 4/5; background: var(--navy);
+  border-radius: 32px; position: relative; overflow: hidden; box-shadow: var(--shadow);
+  transform: rotate(2deg); transition: 0.4s;
+}
+.profile-card:hover { transform: rotate(0) translateY(-7px); }
+.profile-card::before {
+  content: ""; position: absolute; width: 250px; height: 250px; border-radius: 50%;
+  background: var(--orange); right: -80px; top: -70px; opacity: .85;
+}
+.profile-card img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2; }
+.floating-tag {
+  position: absolute; z-index: 5; background: white; border-radius: 16px; padding: 12px 18px;
+  box-shadow: var(--shadow); font-size: 0.8rem; font-weight: 800; border: 1px solid var(--line);
+}
+.tag-one { left: -30px; top: 18%; }
+.tag-two { right: -25px; bottom: 17%; }
+.floating-tag span { display: block; color: var(--orange); font-size: 1.1rem; }
+
+/* Section Headers */
+section { padding: 95px 0; }
+.section-head { text-align: center; max-width: 720px; margin: 0 auto 50px; }
+.section-kicker { color: var(--orange); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.16em; font-weight: 800; }
+.section-title { font-family: "Playfair Display", serif; font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.15; margin: 8px 0 14px; color: var(--navy); }
+.section-desc { color: var(--muted); font-size: 1.02rem; }
+
+/* About Section */
+.about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: start; }
+.about-box {
+  background: var(--navy); color: white; border-radius: var(--radius); padding: 40px; position: relative; overflow: hidden;
+}
+.about-box::after { content: ""; position: absolute; width: 170px; height: 170px; border-radius: 50%; background: var(--orange); right: -65px; bottom: -65px; opacity: 0.9; }
+.about-box h3 { font-family: "Playfair Display", serif; font-size: 2.1rem; line-height: 1.25; position: relative; z-index: 2; }
+.about-content p { color: var(--muted); margin-bottom: 18px; font-size: 1.02rem; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+.stat { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 18px 12px; text-align: center; }
+.stat strong { display: block; font-size: 1.4rem; color: var(--orange); }
+.stat small { color: var(--muted); font-size: 0.82rem; font-weight: 600; }
+
+.skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.skill { padding: 8px 15px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: 0.86rem; font-weight: 600; transition: all 0.2s; }
+.skill:hover { border-color: #fdba74; background: var(--soft); transform: translateY(-2px); }
+
+/* Services Section */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.service-card {
+  background: rgba(255,255,255,0.9); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 32px 28px; transition: 0.3s; position: relative; overflow: hidden;
+}
+.service-card::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: 0.3s; }
+.service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow); border-color: #fed7aa; }
+.service-card:hover::before { transform: scaleX(1); }
+.icon {
+  width: 50px; height: 50px; border-radius: 14px; background: var(--soft); display: grid; place-items: center;
+  font-size: 22px; margin-bottom: 20px; color: var(--orange-dark); font-weight: 700;
+}
+.service-card h3 { margin-bottom: 10px; font-size: 1.2rem; color: var(--navy); }
+.service-card p { color: var(--muted); font-size: 0.94rem; }
+
+/* Projects Section */
+.projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.project {
+  min-height: 290px; border-radius: var(--radius); padding: 32px; background: linear-gradient(135deg,#0b192c,#1e293b);
+  color: white; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end;
+  cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+.project:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(11,25,44,0.35); }
+.project:nth-child(2) { background: linear-gradient(135deg,#9a3412,#ea580c); }
+.project:nth-child(3) { background: linear-gradient(135deg,#0f172a,#334155); }
+.project:nth-child(4) { background: linear-gradient(135deg,#7c2d12,#f97316); }
+
+.project-thumb-preview {
+  width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; opacity: 0.22;
+  transition: opacity 0.3s, transform 0.3s; pointer-events: none;
+}
+.project:hover .project-thumb-preview { opacity: 0.38; transform: scale(1.04); }
+.image-count-badge {
+  position: absolute; top: 22px; right: 22px; font-size: 0.78rem; background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(8px); padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.25);
+  font-weight: 700; display: flex; align-items: center; gap: 6px; color: #fff; z-index: 3;
+}
+.project-label { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.85; font-weight: 700; position: relative; z-index: 2; }
+.project h3 { font-family: "Playfair Display", serif; font-size: 1.85rem; margin: 6px 0; position: relative; z-index: 2; }
+.project p { opacity: 0.88; font-size: 0.93rem; max-width: 440px; position: relative; z-index: 2; line-height: 1.5; }
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(11, 25, 44, 0.82); backdrop-filter: blur(10px);
+  z-index: 2000; display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease; padding: 20px;
+}
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+.modal-container {
+  background: var(--surface); width: min(880px, 94vw); max-height: 88vh;
+  border-radius: 28px; padding: 36px; position: relative; overflow-y: auto;
+  box-shadow: var(--shadow-lg); transform: scale(0.95); transition: transform 0.3s ease;
+}
+.modal-overlay.active .modal-container { transform: scale(1); }
+.close-modal {
+  position: absolute; top: 20px; right: 20px; width: 38px; height: 38px;
+  border-radius: 50%; background: #f1f5f9; border: none; font-size: 1.3rem;
+  cursor: pointer; display: grid; place-items: center; color: var(--navy); transition: all 0.2s; z-index: 10;
+}
+.close-modal:hover { background: #e2e8f0; transform: rotate(90deg); }
+
+.modal-tag { display: inline-block; padding: 4px 14px; background: var(--soft); color: var(--orange-dark); font-weight: 700; font-size: 0.8rem; border-radius: 20px; margin-bottom: 10px; }
+.modal-title { font-family: "Playfair Display", serif; font-size: 2.1rem; color: var(--navy); margin-bottom: 8px; line-height: 1.2; }
+.modal-desc { color: var(--muted); font-size: 0.98rem; margin-bottom: 26px; }
+
+/* Upload Box */
+.image-upload-zone {
+  border: 2px dashed #cbd5e1; border-radius: 20px; padding: 30px;
+  text-align: center; background: #f8fafc; cursor: pointer; transition: all 0.25s;
+  margin-bottom: 28px;
+}
+.image-upload-zone:hover, .image-upload-zone.dragover { border-color: var(--orange); background: var(--soft); }
+.image-upload-zone input { display: none; }
+
+/* Gallery Inside Modal */
+.gallery-section-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;
+  border-bottom: 2px solid var(--line); padding-bottom: 10px;
+}
+.gallery-section-header h4 { font-size: 1.1rem; color: var(--navy); font-weight: 700; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+
+.gallery-card {
+  background: #ffffff; border: 1px solid var(--line); border-radius: 16px;
+  overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.04); display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s;
+}
+.gallery-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+.gallery-img-wrapper { position: relative; width: 100%; height: 150px; background: #0b192c; overflow: hidden; cursor: pointer; }
+.gallery-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.gallery-img-wrapper:hover img { transform: scale(1.05); }
+.gallery-img-overlay {
+  position: absolute; inset: 0; background: rgba(11,25,44,0.45); display: grid; place-items: center;
+  color: white; opacity: 0; transition: opacity 0.2s; font-size: 0.85rem; font-weight: 700;
+}
+.gallery-img-wrapper:hover .gallery-img-overlay { opacity: 1; }
+
+.gallery-card-body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1; }
+.gallery-input, .gallery-textarea {
+  width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px;
+  font-size: 0.85rem; font-family: inherit; outline: none; background: #f8fafc; transition: border-color 0.2s;
+}
+.gallery-input:focus, .gallery-textarea:focus { border-color: var(--orange); background: #fff; }
+.gallery-textarea { resize: vertical; min-height: 55px; }
+
+.gallery-card-actions { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 6px; }
+.btn-save-img {
+  background: var(--navy); color: white; border: none; padding: 6px 14px; border-radius: 8px;
+  font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: background 0.2s;
+}
+.btn-save-img:hover { background: var(--orange); }
+.btn-delete-img {
+  background: transparent; color: #ef4444; border: none; padding: 6px;
+  font-size: 0.82rem; font-weight: 600; cursor: pointer; border-radius: 6px;
+}
+.btn-delete-img:hover { background: #fee2e2; }
+
+/* Lightbox Overlay */
+.lightbox-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(11,25,44,0.94); backdrop-filter: blur(12px);
+  z-index: 3000; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease; padding: 24px;
+}
+.lightbox-overlay.active { opacity: 1; pointer-events: auto; }
+.lightbox-content { max-width: 900px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+.lightbox-img-wrap {
+  max-height: 65vh; width: 100%; display: flex; justify-content: center; align-items: center;
+  margin-bottom: 20px; border-radius: 18px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.5); background: #000;
+}
+.lightbox-img-wrap img { max-height: 65vh; max-width: 100%; object-fit: contain; }
+.lightbox-details { text-align: center; color: white; max-width: 700px; }
+.lightbox-details h3 { font-family: "Playfair Display", serif; font-size: 1.8rem; margin-bottom: 8px; color: #fff; }
+.lightbox-details p { color: #cbd5e1; font-size: 0.98rem; line-height: 1.6; }
+.lightbox-close {
+  position: absolute; top: 25px; right: 25px; background: rgba(255,255,255,0.15);
+  border: none; color: white; width: 44px; height: 44px; border-radius: 50%;
+  font-size: 1.5rem; cursor: pointer; display: grid; place-items: center; transition: background 0.2s;
+}
+.lightbox-close:hover { background: var(--orange); }
+
+/* Contact Section */
+.contact-wrap {
+  background: var(--navy); color: white; border-radius: 30px; padding: 55px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 50px; overflow: hidden; position: relative;
+}
+.contact-wrap::before { content: ""; position: absolute; width: 330px; height: 330px; border-radius: 50%; background: var(--orange); right: -170px; top: -170px; opacity: 0.85; }
+.contact-wrap h2 { font-family: "Playfair Display", serif; font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.1; margin: 10px 0 15px; position: relative; z-index: 2; }
+.contact-wrap p { color: #cbd5e1; position: relative; z-index: 2; }
+.contact-details { margin-top: 30px; display: grid; gap: 14px; position: relative; z-index: 2; }
+.contact-details a { color: #fff; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+.contact-details a:hover { color: #fdba74; }
+
+form { position: relative; z-index: 2; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px; color: #e2e8f0; }
+.field input, .field textarea {
+  width: 100%; border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.08);
+  color: white; border-radius: 12px; padding: 13px 14px; font: inherit; outline: none; transition: border-color 0.2s;
+}
+.field input::placeholder, .field textarea::placeholder { color: #94a3b8; }
+.field input:focus, .field textarea:focus { border-color: #fb923c; box-shadow: 0 0 0 3px rgba(249,115,22,0.18); }
+form .btn { width: 100%; background: var(--orange); color: white; cursor: pointer; }
+form .btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
+
+/* Footer */
+footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; }
+.footer-row { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+.footer-row strong { color: var(--text); }
+
+/* Scroll Reveal */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.show { opacity: 1; transform: none; }
+
+/* Custom Cursor Trail */
+.cursor-bubble {
+  position: fixed; left: 0; top: 0; width: 16px; height: 16px; border-radius: 50%; pointer-events: none;
+  z-index: 9999; transform: translate(-50%,-50%);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.95) 0%, rgba(249,115,22,.72) 42%, transparent 100%);
+  border: 1px solid rgba(249,115,22,.35);
+  box-shadow: 0 0 14px rgba(249,115,22,.22);
+  animation: bubbleTrail .85s ease-out forwards;
+}
+@keyframes bubbleTrail {
+  0% { opacity: .9; transform: translate(-50%,-50%) scale(.35); }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.65); }
+}
+.cursor-dot {
+  position: fixed; width: 8px; height: 8px; border-radius: 50%; pointer-events: none; z-index: 10000;
+  background: #f97316; transform: translate(-50%,-50%); box-shadow: 0 0 12px rgba(249,115,22,.7);
+}
+
+@media(max-width:900px){
+  .hero-grid, .about-grid, .contact-wrap { grid-template-columns: 1fr; }
+  .hero { text-align: center; }
+  .hero-copy { margin-inline: auto; }
+  .buttons { justify-content: center; }
+  .hero-visual { margin-top: 20px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:680px){
+  .navbar { min-height: 68px; }
+  .menu-btn { display: block; }
+  .nav-links {
+    position: absolute; top: 68px; left: 4%; right: 4%; display: none; flex-direction: column;
+    gap: 0; background: white; border: 1px solid var(--line); border-radius: 16px; padding: 8px; box-shadow: var(--shadow);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 12px 13px; }
+  .hero { padding-top: 120px; }
+  section { padding: 75px 0; }
+  .services-grid, .projects { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr; }
+  .contact-wrap { padding: 32px 22px; border-radius: 22px; }
+  .tag-one { left: 0; } .tag-two { right: 0; }
+  .footer-row { flex-direction: column; text-align: center; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .cursor-bubble, .cursor-dot { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Header -->
+<header>
+  <div class="container navbar">
+    <a href="#home" class="logo">HN <span>/</span> Harsh Negi</a>
+    <button class="menu-btn" aria-label="Toggle navigation">☰</button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects & Proofs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow"><i></i> Digital Marketing & Growth Specialist</div>
+      <h1>Harsh <em>Negi</em></h1>
+      <div class="hero-role">SEO Specialist <span>•</span> Paid Media <span>•</span> Growth Strategy</div>
+      <p class="hero-copy">
+        Helping brands scale organic traffic, optimize search rankings, and execute high-converting paid ad campaigns backed by actionable analytics.
+      </p>
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">Explore Projects ↗</a>
+        <a href="#contact" class="btn btn-light">Let's Connect</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="floating-tag tag-one"><span>+140%</span>SEO Traffic Growth</div>
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80" alt="Harsh Negi Profile">
+      </div>
+      <div class="floating-tag tag-two"><span>3.8x</span>Meta & Google Ads ROAS</div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-kicker">About Me</div>
+      <h2 class="section-title">Data-driven strategy, creative execution.</h2>
+      <p class="section-desc">A structured approach to search positioning, campaign architecture, and audience growth.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-box reveal">
+        <h3>Focused on measurable growth & organic dominance.</h3>
+      </div>
+      <div class="about-content reveal">
+        <p>
+          Hi, I'm Harsh Negi. I specialize in developing end-to-end digital marketing funnels, performing technical & on-page SEO audits, and building targeted advertising campaigns on Meta & Google Ads.
+        </p>
+        <p>
+          By combining user intent research with performance analytics, I transform standard web traffic into loyal customers and sustained organic growth.
+        </p>
+        <div class="stats">
+          <div class="stat"><strong>SEO</strong><small>Keyword Dominance</small></div>
+          <div class="stat"><strong>PPC</strong><small>High ROAS Ads</small></div>
+          <div class="stat"><strong>Web</strong><small>CRO & Analytics</small></div>
+        </div>
+        <div class="skills">
+          <span class="skill">SEO Audit</span>
+          <span class="skill">Keyword Research</span>
+          <span class="skill">Google Ads</span>
+          <span class="skill">Meta Ads</span>
+          <span class="skill">Content Strategy</span>
+          <span class="skill">Google Analytics 4</span>
+          <span class="skill">Search Console</span>
+          <span class="skill">Conversion Optimization</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-kicker">Services</div>
+      <h2 class="section-title">Specialized Marketing Solutions</h2>
+      <p class="section-desc">Tailored growth services to scale your brand online.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="icon">🔍</div>
+        <h3>SEO & Keyword Strategy</h3>
+        <p>Comprehensive keyword mapping, on-page SEO, technical fixes, and backlink strategies designed for sustained rank building.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="icon">📈</div>
+        <h3>Meta & Google Paid Ads</h3>
+        <p>Targeted audience segmentation, creative testing, and campaign management delivering maximized return on ad spend.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="icon">✍️</div>
+        <h3>Content & Intent Marketing</h3>
+        <p>Strategic content creation mapped directly to buyers' search intent, driving top-of-funnel discovery and bottom-of-funnel conversions.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="icon">📱</div>
+        <h3>Social Media Campaigns</h3>
+        <p>Creative direction, community engagement strategies, and multi-channel campaign orchestration to build brand equity.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="icon">⚡</div>
+        <h3>CRO & Web Optimization</h3>
+        <p>Improving landing page UX, CTA placements, speed performance, and messaging structure to boost user conversion rates.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="icon">📊</div>
+        <h3>Analytics & Performance Audits</h3>
+        <p>In-depth GA4 setup, custom funnel tracking, and transparent reporting dashboards to keep growth on track.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-kicker">Case Studies & Proofs</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-desc">Click any project to view proofs, upload new screenshots, and manage project galleries.</p>
+    </div>
+
+    <div class="projects">
+      <article class="project reveal" data-id="1">
+        <div class="image-count-badge"><span class="badge-count">0</span> 🖼️ Proofs</div>
+        <img class="project-thumb-preview" src="" alt="Project Thumbnail">
+        <div class="project-label">E-Commerce Growth</div>
+        <h3>SaiyanStore E-Com Campaign</h3>
+        <p>Product architecture, conversion copywriting, Meta retargeting ads, and SEO strategy for online apparel.</p>
+      </article>
+
+      <article class="project reveal" data-id="2">
+        <div class="image-count-badge"><span class="badge-count">0</span> 🖼️ Proofs</div>
+        <img class="project-thumb-preview" src="" alt="Project Thumbnail">
+        <div class="project-label">SEO Case Study</div>
+        <h3>Organic Keyword Ranking Strategy</h3>
+        <p>Comprehensive keyword research, content siloing, and technical optimizations resulting in top search rankings.</p>
+      </article>
+
+      <article class="project reveal" data-id="3">
+        <div class="image-count-badge"><span class="badge-count">0</span> 🖼️ Proofs</div>
+        <img class="project-thumb-preview" src="" alt="Project Thumbnail">
+        <div class="project-label">CRO & Landing Pages</div>
+        <h3>Funnel & Conversion Redesign</h3>
+        <p>UX structural redesign, CTA placement optimizations, and split testing for high-intent landing pages.</p>
+      </article>
+
+      <article class="project reveal" data-id="4">
+        <div class="image-count-badge"><span class="badge-count">0</span> 🖼️ Proofs</div>
+        <img class="project-thumb-preview" src="" alt="Project Thumbnail">
+        <div class="project-label">Paid Media</div>
+        <h3>Performance Marketing Ads</h3>
+        <p>Audience demographic research, ad copy iteration, and ROAS optimization for multi-channel paid media.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Project Proofs Modal -->
+<div class="modal-overlay" id="projectModal">
+  <div class="modal-container">
+    <button class="close-modal" id="closeModalBtn" aria-label="Close modal">&times;</button>
+    <span class="modal-tag" id="modalCategory">Category</span>
+    <h3 class="modal-title" id="modalTitle">Project Title</h3>
+    <p class="modal-desc" id="modalDesc">Project description...</p>
+
+    <!-- Upload Multi-file Drag & Drop Zone -->
+    <div class="image-upload-zone" id="uploadZone">
+      <div style="font-size:2.2rem;margin-bottom:6px;">📁</div>
+      <strong style="display:block;color:var(--navy);font-size:1.05rem;margin-bottom:4px;">Upload Screenshots & Proof Images</strong>
+      <span style="font-size:0.88rem;color:var(--muted);">Click or drag & drop multiple images (Auto-compressed to prevent quota errors)</span>
+      <input type="file" id="imageInput" accept="image/*" multiple>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery-section-header">
+      <h4>Gallery & Analytical Screenshots (<span id="galleryCount">0</span>)</h4>
+      <span style="font-size:0.8rem;color:var(--muted);">Click image preview to open Lightbox</span>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Uploaded cards populated dynamically -->
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <button class="lightbox-close" id="lightboxCloseBtn">&times;</button>
+  <div class="lightbox-content">
+    <div class="lightbox-img-wrap">
+      <img id="lightboxImg" src="" alt="Expanded View">
+    </div>
+    <div class="lightbox-details">
+      <h3 id="lightboxTitle">Image Title</h3>
+      <p id="lightboxDesc">Description...</p>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrap reveal">
+      <div>
+        <div class="section-kicker">Get In Touch</div>
+        <h2>Let's build your growth engine.</h2>
+        <p>Looking for a digital marketing specialist or growth strategist? Send a message to get started.</p>
+        <div class="contact-details">
+          <a href="mailto:harshnegi.marketing@example.com">✉ harshnegi.marketing@example.com</a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener">in LinkedIn Profile</a>
+        </div>
+      </div>
+
+      <form id="contactForm">
+        <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" required></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" rows="4" placeholder="Tell me about your project or goals..." required></textarea></div>
+        <button class="btn" type="submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© 2026 <strong>Harsh Negi</strong>. All rights reserved.</div>
+    <div>Digital Marketing • SEO • Growth Strategy</div>
+  </div>
+</footer>
+
+<script>
+// --- Navigation Logic ---
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.querySelector('.nav-links');
+
+menuBtn.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menuBtn.textContent = open ? '×' : '☰';
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => nav.classList.remove('open'));
+});
+
+// --- Scroll Reveal ---
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// --- Contact Form ---
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+  window.location.href = `mailto:harshnegi.marketing@example.com?subject=${subject}&body=${body}`;
+});
+
+// --- Storage & Default Pre-populated Proofs Data ---
+const STORAGE_KEY = 'harsh_portfolio_data_v3';
+
+const DEFAULT_SAMPLES = {
+  "1": [
+    {
+      id: "sample_1_1",
+      url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+      title: "Store Conversion & Analytics Dashboard",
+      desc: "Monthly revenue growth and conversion rate improvement after ad optimization."
+    }
+  ],
+  "2": [
+    {
+      id: "sample_2_1",
+      url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
+      title: "Google Search Console Organic Impressions",
+      desc: "Organic impressions increased by 140% over 3 months through technical SEO."
+    }
+  ],
+  "3": [
+    {
+      id: "sample_3_1",
+      url: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80",
+      title: "Landing Page Heatmap & Click Test",
+      desc: "Heatmap evaluation showing high engagement on new hero value proposition."
+    }
+  ],
+  "4": [
+    {
+      id: "sample_4_1",
+      url: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&auto=format&fit=crop&q=80",
+      title: "Meta Ads ROAS Performance Dashboard",
+      desc: "Sustained 3.8x ROAS across targeted lookalike audiences."
+    }
+  ]
+};
+
+function getStoredData() {
+  try {
+    const data = localStorage.getItem(STORAGE_KEY);
+    return data ? JSON.parse(data) : DEFAULT_SAMPLES;
+  } catch (e) {
+    console.warn("Storage access failed, using fallback:", e);
+    return DEFAULT_SAMPLES;
+  }
+}
+
+function saveStoredData(data) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch (e) {
+    console.error("Storage limit reached:", e);
+  }
+}
+
+// --- Image Compression helper to prevent QuotaExceededError ---
+function compressAndConvertImage(file, maxWidth = 800, maxHeight = 800, quality = 0.7) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onerror = reject;
+      img.onload = () => {
+        let width = img.width;
+        let height = img.height;
+
+        if (width > maxWidth || height > maxHeight) {
+          if (width > height) {
+            height = Math.round((height * maxWidth) / width);
+            width = maxWidth;
+          } else {
+            width = Math.round((width * maxHeight) / height);
+            height = maxHeight;
+          }
+        }
+
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+// --- Badge and Thumbnail Card Synchronizer ---
+function updateCardBadges() {
+  const data = getStoredData();
+  document.querySelectorAll('.project').forEach(card => {
+    const id = card.getAttribute('data-id');
+    const images = data[id] || [];
+    const countBadge = card.querySelector('.badge-count');
+    const thumbImg = card.querySelector('.project-thumb-preview');
+
+    if (countBadge) countBadge.textContent = images.length;
+    if (thumbImg) {
+      if (images.length > 0) {
+        thumbImg.src = images[0].url;
+        thumbImg.style.display = 'block';
+      } else {
+        thumbImg.src = '';
+        thumbImg.style.display = 'none';
+      }
+    }
+  });
+}
+
+// --- Modal & Gallery Logic ---
+const projectModal = document.getElementById('projectModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const modalTitle = document.getElementById('modalTitle');
+const modalCategory = document.getElementById('modalCategory');
+const modalDesc = document.getElementById('modalDesc');
+const uploadZone = document.getElementById('uploadZone');
+const imageInput = document.getElementById('imageInput');
+const galleryGrid = document.getElementById('galleryGrid');
+const galleryCount = document.getElementById('galleryCount');
+
+// Lightbox Elements
+const lightboxOverlay = document.getElementById('lightboxOverlay');
+const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxTitle = document.getElementById('lightboxTitle');
+const lightboxDesc = document.getElementById('lightboxDesc');
+
+let activeProjectId = null;
+
+function escapeHtml(str) {
+  return (str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+
+function renderModalGallery() {
+  galleryGrid.innerHTML = '';
+  const data = getStoredData();
+  const images = data[activeProjectId] || [];
+
+  galleryCount.textContent = images.length;
+
+  if (images.length === 0) {
+    galleryGrid.innerHTML = `
+      <div style="grid-column:1/-1;text-align:center;padding:30px 10px;color:var(--muted);font-size:0.9rem;">
+        No screenshots uploaded yet. Use the box above to add project proof images.
+      </div>
+    `;
+    return;
+  }
+
+  images.forEach((imgObj, idx) => {
+    const card = document.createElement('div');
+    card.className = 'gallery-card';
+    card.innerHTML = `
+      <div class="gallery-img-wrapper">
+        <img src="${imgObj.url}" alt="${escapeHtml(imgObj.title || 'Screenshot')}">
+        <div class="gallery-img-overlay">🔍 Click to Expand</div>
+      </div>
+      <div class="gallery-card-body">
+        <input type="text" class="gallery-input title-input" placeholder="Title (e.g., GA4 Funnel Report)" value="${escapeHtml(imgObj.title || '')}">
+        <textarea class="gallery-textarea desc-input" placeholder="Description or key metrics...">${escapeHtml(imgObj.desc || '')}</textarea>
+        <div class="gallery-card-actions">
+          <button class="btn-save-img" type="button">Save Info</button>
+          <button class="btn-delete-img" type="button">Delete</button>
+        </div>
+      </div>
+    `;
+
+    // Click Image to Lightbox
+    card.querySelector('.gallery-img-wrapper').addEventListener('click', () => {
+      openLightbox(imgObj.url, imgObj.title || modalTitle.textContent, imgObj.desc || 'No description provided.');
+    });
+
+    // Save Details
+    const saveBtn = card.querySelector('.btn-save-img');
+    saveBtn.addEventListener('click', () => {
+      const newTitle = card.querySelector('.title-input').value.trim();
+      const newDesc = card.querySelector('.desc-input').value.trim();
+
+      const currentData = getStoredData();
+      if (currentData[activeProjectId] && currentData[activeProjectId][idx]) {
+        currentData[activeProjectId][idx].title = newTitle;
+        currentData[activeProjectId][idx].desc = newDesc;
+        saveStoredData(currentData);
+
+        saveBtn.textContent = 'Saved! ✓';
+        saveBtn.style.background = '#16a34a';
+        setTimeout(() => {
+          saveBtn.textContent = 'Save Info';
+          saveBtn.style.background = 'var(--navy)';
+        }, 1500);
+      }
+    });
+
+    // Delete Image
+    card.querySelector('.btn-delete-img').addEventListener('click', () => {
+      const currentData = getStoredData();
+      if (currentData[activeProjectId]) {
+        currentData[activeProjectId].splice(idx, 1);
+        saveStoredData(currentData);
+        renderModalGallery();
+        updateCardBadges();
+      }
+    });
+
+    galleryGrid.appendChild(card);
+  });
+}
+
+// Attach listeners to Project Cards
+document.querySelectorAll('.project').forEach(card => {
+  card.addEventListener('click', () => {
+    activeProjectId = card.getAttribute('data-id');
+
+    modalTitle.textContent = card.querySelector('h3').textContent;
+    modalCategory.textContent = card.querySelector('.project-label').textContent;
+    modalDesc.textContent = card.querySelector('p').textContent;
+
+    renderModalGallery();
+    projectModal.classList.add('active');
+  });
+});
+
+closeModalBtn.addEventListener('click', () => projectModal.classList.remove('active'));
+projectModal.addEventListener('click', (e) => {
+  if (e.target === projectModal) projectModal.classList.remove('active');
+});
+
+// Multi-file Drag & Drop Handlers
+uploadZone.addEventListener('click', () => imageInput.click());
+uploadZone.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  uploadZone.classList.add('dragover');
+});
+uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragover'));
+uploadZone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  uploadZone.classList.remove('dragover');
+  if (e.dataTransfer.files.length > 0) handleFiles(e.dataTransfer.files);
+});
+
+imageInput.addEventListener('change', (e) => {
+  if (e.target.files.length > 0) handleFiles(e.target.files);
+});
+
+async function handleFiles(files) {
+  const fileArray = Array.from(files);
+  const currentData = getStoredData();
+
+  if (!currentData[activeProjectId]) {
+    currentData[activeProjectId] = [];
+  }
+
+  for (const file of fileArray) {
+    if (!file.type.startsWith('image/')) continue;
+    try {
+      const compressedDataUrl = await compressAndConvertImage(file);
+      currentData[activeProjectId].push({
+        id: 'img_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+        url: compressedDataUrl,
+        title: file.name.replace(/\.[^/.]+$/, ""),
+        desc: ''
+      });
+    } catch (err) {
+      console.error("Failed to process image:", file.name, err);
+    }
+  }
+
+  saveStoredData(currentData);
+  renderModalGallery();
+  updateCardBadges();
+  imageInput.value = '';
+}
+
+// --- Lightbox Functions ---
+function openLightbox(url, title, desc) {
+  lightboxImg.src = url;
+  lightboxTitle.textContent = title;
+  lightboxDesc.textContent = desc;
+  lightboxOverlay.classList.add('active');
+}
+
+lightboxCloseBtn.addEventListener('click', () => lightboxOverlay.classList.remove('active'));
+lightboxOverlay.addEventListener('click', (e) => {
+  if (e.target === lightboxOverlay) lightboxOverlay.classList.remove('active');
+});
+
+// --- Custom Cursor with Bubble Trail ---
+const cursorDot = document.createElement('div');
+cursorDot.className = 'cursor-dot';
+document.body.appendChild(cursorDot);
+
+let lastBubble = 0;
+
+window.addEventListener('mousemove', (e) => {
+  cursorDot.style.left = `${e.clientX}px`;
+  cursorDot.style.top = `${e.clientY}px`;
+
+  const now = performance.now();
+  if (now - lastBubble < 50) return;
+  lastBubble = now;
+
+  const bubble = document.createElement('span');
+  bubble.className = 'cursor-bubble';
+
+  const size = 12 + Math.random() * 12;
+  const dx = (Math.random() - 0.5) * 60;
+  const dy = -20 - Math.random() * 60;
+
+  bubble.style.width = `${size}px`;
+  bubble.style.height = `${size}px`;
+  bubble.style.left = `${e.clientX}px`;
+  bubble.style.top = `${e.clientY}px`;
+  bubble.style.setProperty('--dx', `${dx}px`);
+  bubble.style.setProperty('--dy', `${dy}px`);
+
+  document.body.appendChild(bubble);
+  setTimeout(() => bubble.remove(), 850);
+});
+
+// Initialize badges on load
+updateCardBadges();
+</script>
+
+</body>
+</html>
