@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Negi | Digital Marketing Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Default Dark Theme Variables */
+        :root {
+            --bg-color: #08090c;
+            --card-bg: rgba(31, 40, 51, 0.6);
+            --card-border: rgba(255, 87, 34, 0.2);
+            --accent-orange: #ff5722;
+            --accent-glow: #ff7043;
+            --text-main: #ffffff;
+            --text-secondary: #c5c6c7;
+            --border-color: #222831;
+            --nav-bg: rgba(8, 9, 12, 0.85);
+            --table-header-bg: #10141a;
+        }
+
+        /* Light Theme Override Variables */
+        body.light-theme {
+            --bg-color: #f8f9fa;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-border: rgba(255, 87, 34, 0.3);
+            --accent-orange: #e64a19;
+            --accent-glow: #ff5722;
+            --text-main: #1a1a1a;
+            --text-secondary: #4a5568;
+            --border-color: #e2e8f0;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --table-header-bg: #edf2f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Fire Sparkle Canvas */
+        #sparkle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2d34;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-orange);
+        }
+
+        /* Typography Helper */
+        h1, h2, h3, h4 {
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-orange);
+            transition: 0.3s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* Layout & Containers */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 0;
+        }
+
+        section {
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-header span {
+            color: var(--accent-orange);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-header h2 {
+            font-size: 2.3rem;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 18px 0;
+            transition: background 0.4s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-orange);
+        }
+
+        .nav-right-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Dark / Light Toggle Button Styling */
+        .theme-toggle-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--accent-orange);
+            transform: scale(1.05);
+        }
+
+        /* Pop-Up Slide Animation Classes */
+        .reveal-pop {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            will-change: transform, opacity;
+        }
+
+        .reveal-pop.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: radial-gradient(circle at 10% 20%, rgba(255, 87, 34, 0.08) 0%, transparent 40%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-orange);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .hero-text p {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: 0.3s;
+        }
+
+        .tag:hover {
+            border-color: var(--accent-orange);
+            color: var(--text-main);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 290px;
+            height: 290px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-orange);
+            object-fit: cover;
+            box-shadow: 0 0 30px rgba(255, 87, 34, 0.3);
+            animation: floatImage 4s ease-in-out infinite;
+        }
+
+        @keyframes floatImage {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* Cards & Grid Styling */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 14px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 87, 34, 0.08), transparent 40%);
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: var(--accent-orange);
+            box-shadow: 0 10px 25px rgba(255, 87, 34, 0.15);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--accent-orange);
+            margin-bottom: 18px;
+        }
+
+        /* Skills Category */
+        .skill-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .skill-list li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-list li::before {
+            content: "✦";
+            color: var(--accent-orange);
+            font-size: 0.8rem;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        th, td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: var(--table-header-bg);
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        td {
+            color: var(--text-secondary);
+        }
+
+        tr:hover td {
+            background: rgba(255, 87, 34, 0.03);
+            color: var(--text-main);
+        }
+
+        /* Dashboards & Metrics */
+        .metric-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: 0.3s;
+        }
+
+        .metric-card:hover {
+            border-color: var(--accent-orange);
+            transform: translateY(-4px);
+        }
+
+        .metric-card .value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-orange);
+            margin-bottom: 5px;
+        }
+
+        .metric-card .label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 50px;
+            border-radius: 18px;
+            text-align: center;
+            max-width: 650px;
+            margin: auto;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .contact-box h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-glow));
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 15px;
+            box-shadow: 0 5px 20px rgba(255, 87, 34, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 87, 34, 0.5);
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid, .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .nav-links { display: none; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .container { padding: 50px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fire Sparkle Effect Canvas -->
+    <canvas id="sparkle-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">HARSH<span>NEGI</span></div>
+            <div class="nav-right-group">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#casestudy">Case Study</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle-btn" id="theme-toggle">
+                    <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    <span id="theme-text">Light Mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-grid">
+            <div class="hero-text reveal-pop">
+                <span class="subtitle">PORTFOLIO</span>
+                <h1>HARSH NEGI</h1>
+                <p class="subtitle" style="margin-top:-10px;">Digital Marketing Specialist</p>
+                <div class="tag-list">
+                    <span class="tag">SEO</span>
+                    <span class="tag">Social Media</span>
+                    <span class="tag">Paid Ads</span>
+                    <span class="tag">Content Strategy</span>
+                    <span class="tag">Website Optimization</span>
+                </div>
+                <p>Building practical digital marketing skills through real-world projects, campaigns, research, and continuous learning.</p>
+                <a href="#projects" class="btn">Explore Work</a>
+            </div>
+            <div class="hero-image reveal-pop">
+                <img src="https://via.placeholder.com/280" alt="Harsh Negi Profile Picture">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>About Me</span>
+                <h2>Digital Marketing Professional in Training</h2>
+            </div>
+            <div class="card reveal-pop">
+                <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8;">
+                    Digital Marketing learner with hands-on project experience across diverse acquisition channels. Interested in SEO, paid advertising, social media, and content strategy with practical familiarity in website optimization and performance analytics. Currently applying theoretical frameworks to real-world store concepts like <strong>SaiyanStore</strong>, seeking to contribute value to a growth-oriented marketing team.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Marketing Skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>Core Competencies</span>
+                <h2>Digital Marketing Skills</h2>
+            </div>
+            <div class="grid-4">
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <h3>SEO</h3>
+                    <ul class="skill-list">
+                        <li>Keyword Research</li>
+                        <li>On-Page SEO</li>
+                        <li>Website Optimization</li>
+                        <li>Google Search Console</li>
+                        <li>Google Analytics</li>
+                    </ul>
+                </div>
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-solid fa-rectangle-ad"></i></div>
+                    <h3>Paid Marketing</h3>
+                    <ul class="skill-list">
+                        <li>Google Ads</li>
+                        <li>Meta Ads</li>
+                        <li>Audience Targeting</li>
+                        <li>Campaign Analysis</li>
+                    </ul>
+                </div>
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                    <h3>Content & Social</h3>
+                    <ul class="skill-list">
+                        <li>Content Marketing</li>
+                        <li>Social Media Marketing</li>
+                        <li>Content Planning</li>
+                        <li>Canva Designing</li>
+                    </ul>
+                </div>
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web & AI</h3>
+                    <ul class="skill-list">
+                        <li>WordPress</li>
+                        <li>Shopify Stock Mgmt</li>
+                        <li>AI Marketing Tools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Platforms -->
+    <section id="tools">
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>Tech Stack</span>
+                <h2>Tools & Platforms</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-brands fa-google"></i></div>
+                    <h3>Google Ecosystem</h3>
+                    <p style="color: var(--text-secondary);">Google Ads • Analytics (GA4) • Search Console</p>
+                </div>
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-brands fa-meta"></i></div>
+                    <h3>Meta Business Suite</h3>
+                    <p style="color: var(--text-secondary);">Meta Ads Manager • Business Suite • Pixel Tracking</p>
+                </div>
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>SEO Research</h3>
+                    <p style="color: var(--text-secondary);">Semrush • Keyword Research • Search Optimization Tools</p>
+                </div>
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>Creative & Design</h3>
+                    <p style="color: var(--text-secondary);">Canva Designing • Graphic Assets</p>
+                </div>
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+                    <h3>CMS Platforms</h3>
+                    <p style="color: var(--text-secondary);">WordPress • WooCommerce • Shopify Stock Mgmt</p>
+                </div>
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+                    <h3>AI Marketing</h3>
+                    <p style="color: var(--text-secondary);">ChatGPT • AI Copywriting & Research Automation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Projects -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>Hands-On Practice</span>
+                <h2>Practical Projects</h2>
+            </div>
+            <div class="grid-2">
+                <div class="card reveal-pop">
+                    <h3>E-commerce Website & Marketing</h3>
+                    <ul class="skill-list" style="margin-top: 15px;">
+                        <li>Website structure & category layout</li>
+                        <li>Product/category organization</li>
+                        <li>SEO optimization & keyword research</li>
+                        <li>Meta Ads & Google Ads audience concepts</li>
+                    </ul>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>SEO Content Optimization</h3>
+                    <ul class="skill-list" style="margin-top: 15px;">
+                        <li>Keyword research matching search intent</li>
+                        <li>On-page title/meta description optimization</li>
+                        <li>Heading structures & internal linking rules</li>
+                    </ul>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>Social Media Marketing</h3>
+                    <ul class="skill-list" style="margin-top: 15px;">
+                        <li>Content idea generation & monthly calendars</li>
+                        <li>Creative concepts via Canva</li>
+                        <li>Audience engagement & growth campaigns</li>
+                    </ul>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>Paid Advertising Campaigns</h3>
+                    <ul class="skill-list" style="margin-top: 15px;">
+                        <li>Meta Ads campaign structure (Campaign > Set > Ad)</li>
+                        <li>Google Ads campaign creation & audience targeting</li>
+                        <li>Copywriting, creative planning, & metric analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study: SaiyanStore -->
+    <section id="casestudy">
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>Featured Case Study</span>
+                <h2>SaiyanStore E-commerce Showcase</h2>
+            </div>
+            <div class="card reveal-pop" style="border-left: 4px solid var(--accent-orange);">
+                <h3>Objective</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">Develop, market, and optimize an online fashion store while integrating holistic digital marketing principles.</p>
+                
+                <h3>My Role</h3>
+                <ul class="skill-list" style="margin-bottom: 20px;">
+                    <li>SEO & Keyword Research</li>
+                    <li>Store Architecture & Navigation Optimization</li>
+                    <li>Social Media Content Planning & Creative Production</li>
+                    <li>Paid Campaign Audience Structuring</li>
+                </ul>
+
+                <h3>Work Process</h3>
+                <div class="grid-4" style="margin: 20px 0; text-align: center;">
+                    <div class="metric-card"><div class="label">Research</div></div>
+                    <div class="metric-card"><div class="label">Strategy</div></div>
+                    <div class="metric-card"><div class="label">Implementation</div></div>
+                    <div class="metric-card"><div class="label">Optimization</div></div>
+                </div>
+
+                <h3>Key Takeaway</h3>
+                <p style="color: var(--text-secondary);">Learned how search, paid ads, content, and website UX synergize together to lower customer acquisition costs (CAC) and increase user retention in modern e-commerce.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Work -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>Search Engine Optimization</span>
+                <h2>SEO Strategy & Execution</h2>
+            </div>
+            <h3 class="reveal-pop">Keyword Research Matrix</h3>
+            <div class="reveal-pop" style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Keyword</th>
+                            <th>Search Intent</th>
+                            <th>Competition</th>
+                            <th>Content Type</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Printed Oversized Shirts</td>
+                            <td>Transactional / Commercial</td>
+                            <td>Medium</td>
+                            <td>Product Category</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>How to style a men's blazer</td>
+                            <td>Informational</td>
+                            <td>Low</td>
+                            <td>Blog Article</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Men's fashion trends 2026</td>
+                            <td>Informational</td>
+                            <td>High</td>
+                            <td>Guide Article</td>
+                            <td>High</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="reveal-pop" style="margin-top: 40px;">On-Page SEO Checklist Applied</h3>
+            <div class="grid-2" style="margin-top: 15px;">
+                <div class="card reveal-pop">
+                    <ul class="skill-list">
+                        <li><strong>SEO Title:</strong> Action-oriented with primary keywords</li>
+                        <li><strong>Meta Description:</strong> Compelling CTA with target phrases</li>
+                        <li><strong>URL Structure:</strong> Clean, readable slug formatting</li>
+                    </ul>
+                </div>
+                <div class="card reveal-pop">
+                    <ul class="skill-list">
+                        <li><strong>Headings:</strong> Hierarchical structuring (H1, H2, H3)</li>
+                        <li><strong>Internal Linking:</strong> Contextual product cross-linking</li>
+                        <li><strong>Images:</strong> Compressed WebP with optimized ALT text</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Work -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>Content Strategy</span>
+                <h2>Social Media Management</h2>
+            </div>
+            <h3 class="reveal-pop">Content Distribution Mix</h3>
+            <div class="reveal-pop" style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Content Type</th>
+                            <th>Purpose</th>
+                            <th>Format</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Educational</td>
+                            <td>Build trust and industry authority</td>
+                            <td>Carousels / Blog Snippets</td>
+                        </tr>
+                        <tr>
+                            <td>Promotional</td>
+                            <td>Drive conversions and sales</td>
+                            <td>Single Images / Product Showcases</td>
+                        </tr>
+                        <tr>
+                            <td>Engagement</td>
+                            <td>Increase interaction & reach</td>
+                            <td>Reels / Polls / Stories</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paid Advertising -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>Paid Media</span>
+                <h2>Performance Advertising</h2>
+            </div>
+            <div class="grid-2">
+                <div class="card reveal-pop">
+                    <h3><i class="fa-brands fa-meta" style="color: var(--accent-orange);"></i> Meta Ads Framework</h3>
+                    <p style="color: var(--text-secondary); margin-top: 10px;"><strong>Hierarchy:</strong> Campaign → Ad Set → Ad</p>
+                    <ul class="skill-list" style="margin-top: 10px;">
+                        <li><strong>Objective:</strong> Conversions / Traffic</li>
+                        <li><strong>Targeting:</strong> Interest-based (Fashion, Apparel) & Demographics</li>
+                        <li><strong>Ad Copy:</strong> Benefit-driven headers with strong CTAs</li>
+                    </ul>
+                </div>
+                <div class="card reveal-pop">
+                    <h3><i class="fa-brands fa-google" style="color: var(--accent-orange);"></i> Google Search Ads</h3>
+                    <p style="color: var(--text-secondary); margin-top: 10px;"><strong>Focus:</strong> Capturing High Intent Demand</p>
+                    <ul class="skill-list" style="margin-top: 10px;">
+                        <li>Match types: Broad match modifier, Phrase, Exact</li>
+                        <li>Responsive Search Ad copy optimization</li>
+                        <li>Conversion tracking signal setup concept</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Website & E-commerce -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>E-commerce UX</span>
+                <h2>Website Optimization</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal-pop">
+                    <h3>User Experience</h3>
+                    <p style="color: var(--text-secondary);">Clear call-to-action (CTA) placement, mobile responsiveness, and reduced friction throughout checkout flows.</p>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>Store Structure</h3>
+                    <p style="color: var(--text-secondary);">Logical navigation menus, clear category grouping, and structured data-friendly catalog setups.</p>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>Supported CMS</h3>
+                    <p style="color: var(--text-secondary);">Hands-on experience with WordPress, WooCommerce, and Shopify stock/inventory management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics & Reporting -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>Data & Metrics</span>
+                <h2>Analytics & Performance Tracking</h2>
+            </div>
+            <p class="reveal-pop" style="text-align: center; color: var(--text-secondary); margin-bottom: 30px;">
+                Demonstrating real metrics tracked using <strong>Google Search Console</strong> and Campaign Dashboards.
+            </p>
+            <div class="grid-4">
+                <div class="metric-card reveal-pop">
+                    <div class="value">90</div>
+                    <div class="label">Total Clicks</div>
+                </div>
+                <div class="metric-card reveal-pop">
+                    <div class="value">731</div>
+                    <div class="label">Total Impressions</div>
+                </div>
+                <div class="metric-card reveal-pop">
+                    <div class="value">12.3%</div>
+                    <div class="label">Average CTR</div>
+                </div>
+                <div class="metric-card reveal-pop">
+                    <div class="value">11</div>
+                    <div class="label">Average Position</div>
+                </div>
+            </div>
+            <p class="reveal-pop" style="text-align:center; font-size:0.85rem; color:var(--text-secondary); margin-top:20px;">
+                <em>Metrics gathered over active performance windows to continuously analyze search visibility and adjust strategy.</em>
+            </p>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>Continuous Learning</span>
+                <h2>Certifications</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <h3>AI Foundations</h3>
+                    <p style="color: var(--text-secondary);">OpenAI Academy</p>
+                    <p style="font-size:0.85rem; color:var(--accent-orange); margin-top:5px;">AI tools & productivity fundamentals</p>
+                </div>
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <h3>On-Page SEO & AI Essentials</h3>
+                    <p style="color: var(--text-secondary);">Semrush Academy</p>
+                    <p style="font-size:0.85rem; color:var(--accent-orange); margin-top:5px;">On-page SEO principles & search automation</p>
+                </div>
+                <div class="card reveal-pop">
+                    <div class="card-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <h3>Digital Marketing Training</h3>
+                    <p style="color: var(--text-secondary);">Practical Internship Training</p>
+                    <p style="font-size:0.85rem; color:var(--accent-orange); margin-top:5px;">Digital marketing concepts & campaign planning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>Value Add</span>
+                <h2>Core Professional Strengths</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal-pop">
+                    <h3>Research</h3>
+                    <p style="color: var(--text-secondary);">Able to research keywords, audience segments, and competitor moves thoroughly.</p>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>Learning Agility</h3>
+                    <p style="color: var(--text-secondary);">Quickly adapts to new software, ad managers, and changing algorithms.</p>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>Creativity</h3>
+                    <p style="color: var(--text-secondary);">Translates marketing hooks into compelling visual assets and copy.</p>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>Analysis</h3>
+                    <p style="color: var(--text-secondary);">Understands underlying campaign metrics to optimize overall strategy.</p>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>Execution</h3>
+                    <p style="color: var(--text-secondary);">Converts high-level strategy into structured, actionable everyday tasks.</p>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>AI Workflows</h3>
+                    <p style="color: var(--text-secondary);">Uses modern AI tools to accelerate research, ideation, and draft generation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internship Value -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal-pop">
+                <span>Contribution</span>
+                <h2>What I Can Contribute As An Intern</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal-pop">
+                    <h3>SEO Support</h3>
+                    <p style="color: var(--text-secondary);">Keyword expansion, metadata updates, basic technical audits, and content optimization.</p>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>Social Media Support</h3>
+                    <p style="color: var(--text-secondary);">Content calendar scheduling, creative design in Canva, and community management support.</p>
+                </div>
+                <div class="card reveal-pop">
+                    <h3>Paid Ads Assistance</h3>
+                    <p style="color: var(--text-secondary);">Audience targeting research, copy testing variations, and ad set performance updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Goal -->
+    <section>
+        <div class="container" style="text-align: center;">
+            <div class="section-header reveal-pop">
+                <span>Objective</span>
+                <h2>Career Goal</h2>
+            </div>
+            <div class="card reveal-pop" style="max-width: 800px; margin: auto;">
+                <p style="font-size: 1.25rem; color: var(--text-main); margin-bottom: 25px; line-height: 1.7;">
+                    "My goal is to begin my career in a digital marketing team where I can apply my existing skills, learn from experienced professionals, and contribute to real marketing campaigns."
+                </p>
+                <div style="font-weight: 700; color: var(--accent-orange); letter-spacing: 2px;">
+                    LEARN → EXECUTE → ANALYZE → IMPROVE
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="border-bottom: none;">
+        <div class="container">
+            <div class="contact-box reveal-pop">
+                <div class="section-header" style="margin-bottom: 20px;">
+                    <span>Connect</span>
+                    <h2>HARSH NEGI</h2>
+                </div>
+                <p style="color: var(--text-secondary);">Digital Marketing Specialist | SEO • Social Media • Paid Ads</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone" style="color: var(--accent-orange);"></i>
+                        <span>+91 8377970420</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope" style="color: var(--accent-orange);"></i>
+                        <a href="mailto:negiharsh201118@gmail.com">negiharsh201118@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript: Theme Toggle, Pop-up Animations & Fire Sparkle Engine -->
+    <script>
+        // 1. Theme Toggle Functionality (Dark / Light Mode)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+
+            if (document.body.classList.contains('light-theme')) {
+                themeIcon.className = 'fa-solid fa-moon';
+                themeText.textContent = 'Dark Mode';
+            } else {
+                themeIcon.className = 'fa-solid fa-sun';
+                themeText.textContent = 'Light Mode';
+            }
+        });
+
+        // 2. Intersection Observer for Pop-up Slide Animation on Scroll
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal-pop').forEach(element => {
+            revealObserver.observe(element);
+        });
+
+        // Mouse lighting interaction on cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            });
+        });
+
+        // 3. Fire Sparkle Effect Canvas Engine on Scroll & Mouse
+        const canvas = document.getElementById('sparkle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        class Sparkle {
+            constructor(x, y) {
+                this.x = x || Math.random() * width;
+                this.y = y || Math.random() * height;
+                this.size = Math.random() * 4 + 1;
+                this.speedX = (Math.random() - 0.5) * 2.5;
+                this.speedY = -Math.random() * 3 - 1; // rise up like fire sparks
+                this.color = `hsl(${Math.random() * 30 + 10}, 100%, ${Math.random() * 30 + 50}%)`; // fire orange/yellow hue
+                this.alpha = 1;
+                this.decay = Math.random() * 0.02 + 0.015;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.alpha -= this.decay;
+                if (this.size > 0.2) this.size -= 0.05;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = '#ff5722';
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        const sparkles = [];
+
+        function addSparkles(count, x, y) {
+            for (let i = 0; i < count; i++) {
+                sparkles.push(new Sparkle(x, y));
+            }
+        }
+
+        // Trigger sparks on Scroll
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            const scrollDelta = Math.abs(currentScrollY - lastScrollY);
+            
+            if (scrollDelta > 2) {
+                const spawnCount = Math.min(Math.floor(scrollDelta / 3), 8);
+                for (let i = 0; i < spawnCount; i++) {
+                    const sparkX = Math.random() * width;
+                    const sparkY = window.innerHeight - (Math.random() * 100);
+                    sparkles.push(new Sparkle(sparkX, sparkY));
+                }
+            }
+            lastScrollY = currentScrollY;
+        });
+
+        // Trigger sparks on Mouse movement
+        window.addEventListener('mousemove', (e) => {
+            if (Math.random() < 0.3) {
+                addSparkles(1, e.clientX, e.clientY);
+            }
+        });
+
+        // Main Animation Loop
+        function animateSparkles() {
+            ctx.clearRect(0, 0, width, height);
+
+            for (let i = sparkles.length - 1; i >= 0; i--) {
+                sparkles[i].update();
+                sparkles[i].draw();
+
+                if (sparkles[i].alpha <= 0 || sparkles[i].size <= 0.2) {
+                    sparkles.splice(i, 1);
+                }
+            }
+
+            requestAnimationFrame(animateSparkles);
+        }
+
+        animateSparkles();
+    </script>
+</body>
+</html>
